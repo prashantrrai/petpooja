@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Seat Selection</title>
+    <link rel="stylesheet" href="../styles/seat.css">
+</head>
+
+<body>
+    <section class="seat-selection">
+        <h1>Select Your Seat</h1>
+        <div class="train-container">
+            <div class="train">
+                <div class="train-engine">
+                    <div class="light top-light"></div>
+                    <div class="light bottom-light"></div>
+                </div>
+
+                <div class="train-car">
+                    <div class="seats">
+                        <div class="seat available" data-seat="A1">A1</div>
+                        <div class="seat available" data-seat="A2">A2</div>
+                        <div class="seat available" data-seat="A3">A3</div>
+                        <div class="seat available" data-seat="A4">A4</div>
+                        <div class="seat unavailable" data-seat="A5">A5</div>
+                        <div class="seat available" data-seat="A6">A6</div>
+                    </div>
+                    <div class="train-car-divider"></div>
+                    <div class="seats">
+                        <div class="seat available" data-seat="B1">B1</div>
+                        <div class="seat available" data-seat="B2">B2</div>
+                        <div class="seat available" data-seat="B3">B3</div>
+                        <div class="seat available" data-seat="B4">B4</div>
+                        <div class="seat unavailable" data-seat="B5">B5</div>
+                        <div class="seat available" data-seat="B6">B6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="seat-info">
+            <div class="info-item">
+                <div class="seat available"></div>
+                <p>Available</p>
+            </div>
+            <div class="info-item">
+                <div class="seat selected"></div>
+                <p>Selected</p>
+            </div>
+            <div class="info-item">
+                <div class="seat unavailable"></div>
+                <p>Unavailable</p>
+            </div>
+        </div>
+        <button onclick="openModal()" class="btn-confirm">Confirm Selection</button>
+    </section>
+    <script>
+        const seats = document.querySelectorAll('.seat');
+        const train = document.querySelector('.train');
+        const trainContainer = document.querySelector('.train-container');
+
+        let isTrainMoving = true;
+
+        trainContainer.addEventListener('mouseover', () => {
+            isTrainMoving = false;
+            train.style.animationPlayState = 'paused';
+        });
+
+        trainContainer.addEventListener('mouseout', () => {
+            isTrainMoving = true;
+            train.style.animationPlayState = 'running';
+        });
+
+        seats.forEach(seat => {
+            seat.addEventListener('click', () => {
+                if (isTrainMoving) return; // Prevent seat selection while train is moving
+
+                if (seat.classList.contains('occupied')) {
+                    console.log('Seat is already occupied');
+                } else {
+                    seat.classList.toggle('selected');
+                }
+            });
+        });
+
+        function openModal() {
+            const modal = document.getElementById("confirmationModal");
+            modal.style.display = "flex";
+        }
+    </script>
+</body>
+
+</html>

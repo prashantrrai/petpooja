@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Listing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/cafeListing.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="filters">
+            <select>
+                <option value="default">Sort by</option>
+                <option value="name">Name</option>
+                <option value="rating">Rating</option>
+            </select>
+            <select>
+                <option value="all">All</option>
+                <option value="veg">Veg</option>
+                <option value="non-veg">Non-Veg</option>
+            </select>
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="restaurant-card">
+            <img src="restaurant1.jpg" alt="Restaurant Image">
+            <div>
+                <h2>Restaurant Name</h2>
+                <p>A brief description of the restaurant goes here.</p>
+                <button>Explore More</button>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <img src="restaurant2.jpg" alt="Restaurant Image">
+            <div>
+                <h2>Another Restaurant</h2>
+                <p>A brief description of the restaurant goes here.</p>
+                <button>Explore More</button>
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button>Previous</button>
+            <button>1</button>
+            <button>2</button>
+            <button>Next</button>
+        </div>
+    </div>
+</body>
+
+</html>
