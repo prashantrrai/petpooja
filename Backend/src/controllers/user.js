@@ -10,7 +10,7 @@ export const AddUser = async (req, res) => {
         if (user) {
             return res.status(409).json({
                 success: false,
-                message: `${user.firstname} Already Exists!`,
+                message: `${user.phone} Already Exists!`,
             });
         };
 
@@ -65,7 +65,10 @@ export const getUserById = async (req, res) => {
         const id = req.params.id;
         const user = await Users.findById(id);
 
-        if (!user) return next(new ErrorHandler("Invalid Id", 400));
+        if (!user) return res.status(400).json({
+            success: false,
+            message: "Invalid ID"
+        });
 
         return res.status(200).json({
             success: true,
@@ -85,7 +88,10 @@ export const deleteUser = async (req, res) => {
         const id = req.params.id;
         const user = await Users.findById(id);
 
-        if (!user) return next(new ErrorHandler("Invalid Id", 400));
+        if (!user) return res.status(400).json({
+            success: false,
+            message: `Invalid ID`,
+        });
 
         await Users.deleteOne();
 
@@ -103,7 +109,7 @@ export const deleteUser = async (req, res) => {
 
 export const editUser = async (req, res) => {
     try {
-        const { firstname, lastname, email, password, gender, phone } = req.body;
+        const { firstName, lastName, email, password, gender, phone } = req.body;
         const { id } = req.params;
 
 
@@ -115,19 +121,21 @@ export const editUser = async (req, res) => {
                 message: `User Not Found`,
             });
 
-        user = await Users.findByIdAndUpdate({ _id: id }, {
-            firstname,
-            lastname,
+        let updatedUser = await Users.findByIdAndUpdate({ _id: id }, {
+            firstName,
+            lastName,
             email,
             password,
             gender,
             phone
-        });
+        },
+            { new: true, runValidators: true }
+        );
 
         return res.status(200).json({
             success: true,
             message: `User Updated Successfully`,
-            response: user
+            response: updatedUser
         });
     } catch (error) {
         return res.status(500).json({

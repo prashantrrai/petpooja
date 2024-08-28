@@ -13,6 +13,7 @@ ConnectionDB(DB_URI);
 // Import Routes
 import userRouter from "./src/routes/user.js";
 import authRouter from "./src/routes/auth.js"
+import cafeRouter from "./src/routes/cafe.js";
 
 // setting configurations
 const app = express();
@@ -34,6 +35,7 @@ app.use('/api/v1', apiRouter);
 // Module Wise Route
 apiRouter.use('/user', userRouter);
 apiRouter.use('/auth', authRouter);
+apiRouter.use('/cafe', cafeRouter);
 
 
 // Default route
