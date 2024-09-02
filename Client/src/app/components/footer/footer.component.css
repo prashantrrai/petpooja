@@ -1,0 +1,20 @@
+.contact-support {
+    padding: 40px 20px;
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-support h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.support-details p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.support-details i {
+    margin-right: 10px;
+}
