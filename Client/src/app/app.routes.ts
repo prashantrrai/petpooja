@@ -13,10 +13,10 @@ export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'signup', component: SignupComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'order-history', component: OrderHistoryComponent },
-    { path: 'restaurant-listing', component: RestaurantListingComponent },
-    { path: 'restaurant-detail', component: RestaurantDetailComponent },
-    { path: 'train-seat-selection', component: TrainSeatSelectionComponent },
-    { path: 'customer-details-booking', component: CustomerDetailsBookingComponent },
+    { path: 'order/history', component: OrderHistoryComponent },
+    { path: 'restaurant/list', component: RestaurantListingComponent },
+    { path: 'restaurant/detail', component: RestaurantDetailComponent },
+    { path: 'seat', component: TrainSeatSelectionComponent },
+    { path: 'booking', component: CustomerDetailsBookingComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];
