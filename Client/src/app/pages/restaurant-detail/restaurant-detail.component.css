@@ -1,0 +1,138 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 20px;
+}
+
+.restaurant-view {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.restaurant-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-details {
+    text-align: center;
+}
+
+.restaurant-details h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.detail-item h3 {
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-right: 10px;
+}
+
+.detail-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.btn-book-seat {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-book-seat:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (min-width: 769px) {
+    .container {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .restaurant-image {
+        flex: 1;
+    }
+
+    .restaurant-details {
+        flex: 2;
+        text-align: left;
+    }
+
+    .restaurant-details h1 {
+        font-size: 2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .details {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .detail-item {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail-item {
+        width: 100%;
+    }
+}

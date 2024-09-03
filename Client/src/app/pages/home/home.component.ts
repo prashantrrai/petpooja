@@ -17,7 +17,7 @@ export class HomeComponent {
   restaurants = [
     { name: 'The Grand Thakkar', rating: 4.5, feedback: 'Great food, cozy atmosphere!', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYTVpeVi7Btg-BXjEAQtg3Xuln11xmtr3p3HX9V2wiDfXu4-T2UEu6UbcZD0fJSG6biW4&usqp=CAU' },
     { name: 'Guru Krupa Hotel', rating: 4.0, feedback: 'Excellent service!', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXsfyJNBLjamFbkjPvgz84tS1kXjrW4UtB1w&s' },
-    { name: 'Laapinoz Pizza', rating: 4.0, feedback: 'Excellent service!', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToTsn6g4wVCs1KgTpt9TwuHpZnqtfBrzJ8zA&s' },
+    { name: 'La Pino\'z Pizza', rating: 4.0, feedback: 'Excellent service!', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToTsn6g4wVCs1KgTpt9TwuHpZnqtfBrzJ8zA&s' },
   ];
 
   testimonials = [

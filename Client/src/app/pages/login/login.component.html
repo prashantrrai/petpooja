@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="login-container">
+    <div class="login-box">
+        <h2>Login</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="input-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" formControlName="phone" placeholder="Enter your phone number" required
+                    minlength="10" maxlength="10" pattern="\d{10}" />
+                <div *ngIf="loginForm.controls['phone'].invalid && loginForm.controls['phone'].touched" class="error">
+                    Please enter a valid phone number.
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" placeholder="Enter your password"
+                    required minlength="8" maxlength="20" />
+                <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"
+                    class="error">
+                    Please enter a valid password.
+                </div>
+            </div>
+
+            <button type="submit" class="btn-login" [disabled]="loginForm.invalid">Login</button>
+        </form>
+
+        <div class="register-option">
+            <p>Don't have an account? <a routerLink="/signup" class="register-link">Sign Up</a></p>
+        </div>
+    </div>
+</div>

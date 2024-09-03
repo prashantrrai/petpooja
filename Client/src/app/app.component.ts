@@ -12,10 +12,9 @@ import { FooterComponent } from "./components/footer/footer.component";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  // title = 'Client';
   @Input() title: string = 'Discover the Best Restaurants';
   @Input() searchQuery: string = '';
-  @Input() bannerImage: string = 'assets/PetpoojaBanner.png'; // Adjust path if needed
+  @Input() bannerImage: string = '';
 
   search(): void {
     // Implement search functionality here

@@ -3,7 +3,12 @@
         <div class="logo">
             <img src="https://5.imimg.com/data5/WL/PX/MY-33515520/petpooja-pos-500x500.png" alt="logo">
         </div>
-        <nav class="main-nav">
+        <div class="hamburger" (click)="toggleSidebar()" [class.open]="isSidebarOpen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="main-nav" [class.active]="isSidebarOpen">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>

@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.filters select,
+.filters input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.restaurant-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.restaurant-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.restaurant-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.restaurant-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.restaurant-card button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 200px;
+}
+
+.restaurant-card button:hover {
+    background-color: #0056b3;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+@media (min-width: 768px) {
+    .filters {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .filters select,
+    .filters input {
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .restaurant-card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .restaurant-card img {
+        width: 120px;
+        height: 120px;
+        margin-right: 20px;
+    }
+
+    .restaurant-card div {
+        flex: 1;
+    }
+
+    .restaurant-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .restaurant-card p {
+        text-align: left;
+    }
+
+    .restaurant-card button {
+        width: auto;
+    }
+}

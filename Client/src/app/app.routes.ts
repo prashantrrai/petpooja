@@ -7,6 +7,7 @@ import { OrderHistoryComponent } from './pages/order-history/order-history.compo
 import { RestaurantListingComponent } from './pages/restaurant-listing/restaurant-listing.component';
 import { TrainSeatSelectionComponent } from './pages/train-seat-selection/train-seat-selection.component';
 import { RestaurantDetailComponent } from './pages/restaurant-detail/restaurant-detail.component';
+import { CustomerDetailsBookingComponent } from './pages/customer-details-booking/customer-details-booking.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'restaurant-listing', component: RestaurantListingComponent },
     { path: 'restaurant-detail', component: RestaurantDetailComponent },
     { path: 'train-seat-selection', component: TrainSeatSelectionComponent },
+    { path: 'customer-details-booking', component: CustomerDetailsBookingComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

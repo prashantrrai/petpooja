@@ -1,1 +1,8 @@
-<p>confirmation-dialog works!</p>
+<div class="confirmation-dialog">
+    <h2>Confirmation</h2>
+    <p>{{ data.message }}</p>
+    <div class="actions">
+        <button mat-button (click)="onConfirm()">Confirm</button>
+        <button mat-button (click)="onCancel()">Cancel</button>
+    </div>
+</div>

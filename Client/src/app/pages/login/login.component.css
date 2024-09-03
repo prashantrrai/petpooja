@@ -1,0 +1,147 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .login-box {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .input-group input:focus {
+    border-color: #007BFF;
+    outline: none;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  .btn-login {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-login:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .btn-login:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  .register-option {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .register-option p {
+    font-size: 14px;
+  }
+  
+  .register-option a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .register-option a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile-first approach */
+  @media (max-width: 600px) {
+    .login-box {
+      padding: 20px;
+    }
+  
+    .input-group input {
+      padding: 10px;
+    }
+  
+    .btn-login {
+      padding: 10px;
+    }
+  }
+  
+  /* For larger screens (e.g., tablets) */
+  @media (min-width: 601px) and (max-width: 992px) {
+    .login-box {
+      max-width: 500px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-box {
+      padding: 20px;
+    }
+  
+    .input-group input {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .btn-login {
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
