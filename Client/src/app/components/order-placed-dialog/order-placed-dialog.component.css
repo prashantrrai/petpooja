@@ -1,0 +1,87 @@
+/* Style for the entire dialog container */
+.mat-dialog-container {
+  background-color: #ffffff;
+  width: 90vw; /* Responsive width */
+  max-width: 300px; /* Maximum width */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  text-align: center;
+}
+
+/* Title of the dialog */
+.confirmation-dialog-title {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+/* Content area of the dialog */
+.confirmation-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Icon styling */
+.confirmation-icon {
+  font-size: 4rem;
+  color: #4CAF50; /* Green color for the icon */
+  margin-bottom: 16px;
+}
+
+/* Actions section (buttons) */
+.confirmation-dialog-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+/* Button styling */
+.confirmation-dialog-actions button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Button hover effect */
+.confirmation-dialog-actions button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Specific button styles */
+.confirmation-dialog-actions button:nth-of-type(1) {
+  background-color: #007bff; /* Primary button color */
+  color: #ffffff;
+}
+
+.confirmation-dialog-actions button:nth-of-type(2) {
+  background-color: #f44336; /* Secondary button color */
+  color: #ffffff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .mat-dialog-container {
+    width: 90vw;
+    max-height: 90vh;
+  }
+
+  .confirmation-dialog-title {
+    font-size: 1.25rem;
+  }
+
+  .confirmation-icon {
+    font-size: 3rem;
+  }
+
+  .confirmation-dialog-actions button {
+    font-size: 0.875rem;
+    margin-bottom: 10px;
+  }
+}

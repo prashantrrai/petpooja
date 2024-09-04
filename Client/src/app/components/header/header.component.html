@@ -10,21 +10,9 @@
         </div>
         <nav class="main-nav" [class.active]="isSidebarOpen">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Customers</a></li>
-                <li><a href="#">Partners</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">More</a>
-                    <div class="dropdown-content">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">FAQ</a>
-                        <a href="#">Support</a>
-                    </div>
-                </li>
+                <li><a routerLink="/">Home</a></li>
+                <li><a routerLink="/restaurant/list">Restaurants</a></li>
+                <li><a routerLink="/order/history">Orders</a></li>
             </ul>
         </nav>
     </div>

@@ -1,99 +1,105 @@
 /* Overall body styling */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 10px; /* Reduced padding to avoid horizontal overflow */
+  box-sizing: border-box; /* Apply box-sizing to avoid overflow issues */
+}
+
+/* Form container styling */
+.booking-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  width: 100%;
+  max-width: 400px; /* Set a max-width to avoid stretching on large screens */
+  margin: auto; /* Center the form */
+  box-sizing: border-box; /* Ensures padding is included in the total width */
+}
+
+/* Heading styling */
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #007bff;
+  text-align: center;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+/* Label styling */
+label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Input styling */
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box; /* Ensures padding is included in the total width */
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.875rem;
+  margin-top: 5px;
+}
+
+/* Submit button styling */
+.btn-submit {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in the total width */
+}
+
+.btn-submit:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  body {
+      padding: 5px; /* Further reduced padding for very small screens */
   }
-  
-  /* Form container styling */
+
   .booking-form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 100%;
-    width: 100%;
-    max-width: 400px; /* Set a max-width to avoid stretching on large screens */
-    margin: auto; /* Center the form */
-  }
-  
-  /* Heading styling */
-  h1 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #007bff;
-    text-align: center;
-  }
-  
-  /* Form group styling */
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  /* Label styling */
-  label {
-    font-weight: 500;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  /* Input styling */
-  input {
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    box-sizing: border-box; /* Ensures padding is included in the total width */
-  }
-  
-  /* Error message styling */
-  .error-message {
-    color: #ff4d4d;
-    font-size: 0.875rem;
-    margin-top: 5px;
-  }
-  
-  /* Submit button styling */
-  .btn-submit {
-    padding: 12px;
-    font-size: 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-  }
-  
-  .btn-submit:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive design for smaller screens */
-  @media (max-width: 600px) {
-    .booking-form {
       padding: 15px;
-    }
-  
-    h1 {
+  }
+
+  h1 {
       font-size: 1.25rem;
-    }
-  
-    .form-group {
+  }
+
+  .form-group {
       margin-bottom: 0.75rem;
-    }
-  
-    input {
+  }
+
+  input {
       font-size: 0.875rem;
-    }
-  
-    .btn-submit {
+  }
+
+  .btn-submit {
       font-size: 0.875rem;
       padding: 10px;
-    }
   }
-  
+}

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../components/confirmation-dialog/confirmation-dialog.component';
+import { OrderPlacedDialogComponent } from '../../components/order-placed-dialog/order-placed-dialog.component';
 
 @Component({
   selector: 'app-customer-details-booking',
@@ -42,9 +43,20 @@ export class CustomerDetailsBookingComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('Confirmed');
+        this.dialog.open(OrderPlacedDialogComponent, {
+          width: '300px',
+          height: '200px'
+        });
       } else {
         console.log('Cancelled');
       }
     });
+
   }
+
+  // openDialog(): void {
+  //   this.dialog.open(OrderConfirmationDialogComponent, {
+  //     width: '300px',
+  //   });
+  // }
 }
