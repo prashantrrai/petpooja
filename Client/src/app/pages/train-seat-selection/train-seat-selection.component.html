@@ -1,1 +1,56 @@
-<p>train-seat-selection works!</p>
+<section class="seat-selection">
+    <h1>Select Your Seat</h1>
+
+    <div class="train-container" (mouseover)="pauseTrain()" (mouseout)="resumeTrain()">
+        <div class="train" [ngStyle]="{ 'animation-play-state': isTrainMoving ? 'running' : 'paused' }">
+            <div class="train-engine">
+                <div class="light top-light"></div>
+                <div class="light bottom-light"></div>
+            </div>
+
+            <div class="train-car">
+                <div class="seats">
+                    <div class="seat" *ngFor="let seat of seatsA" [ngClass]="{
+                'available': seat.status === 'available',
+                'unavailable': seat.status === 'unavailable',
+                'selected': seat.status === 'selected'
+              }" (click)="selectSeat(seat)">
+                        {{ seat.label }}
+                    </div>
+                </div>
+                <div class="train-car-divider"></div>
+                <div class="seats">
+                    <div class="seat" *ngFor="let seat of seatsB" [ngClass]="{
+                'available': seat.status === 'available',
+                'unavailable': seat.status === 'unavailable',
+                'selected': seat.status === 'selected'
+              }" (click)="selectSeat(seat)">
+                        {{ seat.label }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seat-info">
+        <div class="info-item">
+            <div class="seat available"></div>
+            <p>Available</p>
+        </div>
+        <div class="info-item">
+            <div class="seat selected"></div>
+            <p>Selected</p>
+        </div>
+        <div class="info-item">
+            <div class="seat unavailable"></div>
+            <p>Unavailable</p>
+        </div>
+    </div>
+
+
+    <!-- <button class="btn-confirm" (click)="confirmSelection()">Confirm Selection</button> -->
+    <button class="btn-confirm" (click)="onConfirm()" routerLink="/booking">Confirm Selection</button>
+</section>
+
+<!-- Modal -->
+<!-- <app-confirmation-dialog *ngIf="showModal" (confirm)="onConfirm($event)"></app-confirmation-dialog> -->
