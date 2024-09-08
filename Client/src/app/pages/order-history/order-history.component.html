@@ -1,1 +1,20 @@
-<p>order-history works!</p>
+<section class="order-history">
+    <h1>Your Order History</h1>
+    <div class="order-container">
+        <div class="order-card" *ngFor="let order of orders">
+            <div class="imgbox">
+                <img [src]="order.image" alt="Restaurant Image" class="restaurant-image">
+                <div class="status-badge" [ngClass]="getStatusClass(order.status)">
+                    {{ order.status }}
+                </div>
+            </div>
+            <div class="order-details">
+                <h2 class="order-title">{{ order.title }}</h2>
+                <p class="order-description">{{ order.description }}</p>
+                <p class="seat-no">Seat No: {{ order.seatNumber }}</p>
+                <p class="booking-date">Date: {{ order.date }}</p>
+
+            </div>
+        </div>
+    </div>
+</section>
