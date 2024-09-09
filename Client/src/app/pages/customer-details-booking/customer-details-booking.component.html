@@ -36,7 +36,7 @@
         </div>
         <div class="form-group">
             <label for="persons">Number of Persons:</label>
-            <input type="number" id="persons" formControlName="persons" />
+            <input type="number" id="persons" formControlName="persons" placeholder="e.g, 6" />
             <div *ngIf="bookingForm.controls['persons'].invalid && bookingForm.controls['persons'].touched"
                 class="error-message">
                 Number of persons is required and must be between 1 and 10.

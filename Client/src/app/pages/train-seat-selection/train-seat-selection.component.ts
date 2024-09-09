@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-train-seat-selection',
@@ -31,6 +31,9 @@ export class TrainSeatSelectionComponent {
     { label: 'B6', status: 'available' }
   ];
 
+
+  constructor(private router: Router) { }
+
   pauseTrain() {
     this.isTrainMoving = false;
   }
@@ -57,7 +60,20 @@ export class TrainSeatSelectionComponent {
   //   }
   // }
 
+  // onConfirm() {
+  //   console.log('Booking confirmed');
+  // }
+
   onConfirm() {
+    const isSeatSelected = this.seatsA.concat(this.seatsB).some(seat => seat.status === 'selected');
+
+    if (!isSeatSelected) {
+      alert('Please select a seat before proceeding.');
+      return;
+    }
+
+    // Proceed to booking if a seat is selected
     console.log('Booking confirmed');
+    this.router.navigate(['/booking']);
   }
 }

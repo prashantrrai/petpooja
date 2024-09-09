@@ -43,10 +43,7 @@ export class CustomerDetailsBookingComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         console.log('Confirmed');
-        this.dialog.open(OrderPlacedDialogComponent, {
-          width: '300px',
-          height: '200px'
-        });
+        this.dialog.open(OrderPlacedDialogComponent);
       } else {
         console.log('Cancelled');
       }
