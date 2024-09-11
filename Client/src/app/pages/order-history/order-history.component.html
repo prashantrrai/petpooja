@@ -10,9 +10,17 @@
             </div>
             <div class="order-details">
                 <h2 class="order-title">{{ order.title }}</h2>
-                <p class="order-description">{{ order.description }}</p>
-                <p class="seat-no">Seat No: {{ order.seatNumber }}</p>
-                <p class="booking-date">Date: {{ order.date }}</p>
+                <h3 style="font-weight: bold;">{{ order.restaurantName }}</h3>
+                <!-- <p class="order-description">{{ order.description }}</p> -->
+
+                <div style="display: flex; justify-content: space-between;">
+                    <p class="details">Persons: {{ order.numberOfPersons }}</p>
+                    <p class="details">Seat No: {{ order.seatNumber }}</p>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <p class="details">Date: {{ order.date }}</p>
+                    <p class="details">Time: {{ order.timing }}</p>
+                </div>
 
             </div>
         </div>

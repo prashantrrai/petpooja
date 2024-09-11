@@ -15,7 +15,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'order/history', component: OrderHistoryComponent },
     { path: 'restaurant/list', component: RestaurantListingComponent },
-    { path: 'restaurant/detail', component: RestaurantDetailComponent },
+    { path: 'restaurant/detail/:id', component: RestaurantDetailComponent },
     { path: 'seat', component: TrainSeatSelectionComponent },
     { path: 'booking', component: CustomerDetailsBookingComponent },
     { path: '**', redirectTo: '', pathMatch: 'full' }

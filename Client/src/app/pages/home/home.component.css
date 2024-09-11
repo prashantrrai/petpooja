@@ -29,6 +29,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 .banner-content {
@@ -36,9 +37,20 @@ body {
     z-index: 2;
 }
 
+#line-2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
 .banner h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-family: "Playpen Sans", cursive;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
 }
 
 .search-bar {
@@ -120,6 +132,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 55%;
 }
 
 .info-container button {
@@ -181,7 +194,6 @@ body {
     border-radius: 10px;
     padding: 20px;
     width: 100%;
-    max-width: 300px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -234,6 +246,24 @@ body {
     margin-right: 10px;
 }
 
+.map{
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.map-container {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 /* Responsive adjustments */
 @media (min-width: 768px) {
     .banner h1 {
@@ -251,6 +281,10 @@ body {
     .testimonial-container {
         justify-content: space-between;
     }
+
+    .map-container {
+        height: 400px; 
+    }
 }
 
 @media (min-width: 1024px) {
@@ -267,5 +301,10 @@ body {
     .card,
     .testimonial {
         max-width: 320px;
+    }
+
+    .map-container {
+        max-width: 80%; 
+        height: 450px;
     }
 }

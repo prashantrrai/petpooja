@@ -1,14 +1,13 @@
 <section class="restaurant-view">
-    <div class="container">
+    <div class="container" *ngIf="selectedRestaurant">
         <div class="restaurant-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXsfyJNBLjamFbkjPvgz84tS1kXjrW4UtB1w&s"
-                alt="Restaurant Image">
+            <img [src]="selectedRestaurant.image" [alt]="selectedRestaurant.name">
         </div>
         <div class="restaurant-details">
-            <h1>{{ restaurant.name }}</h1>
-            <p class="description">{{ restaurant.description }}</p>
+            <h1>{{ selectedRestaurant.name }}</h1>
+            <p class="description">{{ selectedRestaurant.description }}</p>
             <div class="details">
-                <div class="detail-item" *ngFor="let detail of restaurant.details">
+                <div class="detail-item" *ngFor="let detail of selectedRestaurant.details">
                     <h3>{{ detail.label }}</h3>
                     <p>{{ detail.value }}</p>
                 </div>

@@ -21,6 +21,7 @@ body {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #333;
+    font-weight: bold;
 }
 
 .order-container {
@@ -54,6 +55,7 @@ body {
 .order-title {
     font-size: 1.2rem;
     color: #007BFF;
+    margin: 0;
     /* background: linear-gradient(to right, #061c34, #003366);  */
 }
 
@@ -62,8 +64,7 @@ body {
     color: #555;
 }
 
-.seat-no,
-.booking-date {
+.details {
     font-size: 0.9rem;
     color: #777;
 }

@@ -14,31 +14,20 @@
     </div>
 
     <div class="restaurant-list">
-        <div class="restaurant-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXsfyJNBLjamFbkjPvgz84tS1kXjrW4UtB1w&s"
-                alt="Restaurant Image">
+        <div class="restaurant-card" *ngFor="let restaurant of restaurants">
+            <img [src]="restaurant.image" [alt]="restaurant.name">
             <div>
-                <h2>Restaurant Name</h2>
-                <p>A brief description of the restaurant goes here.</p>
-                <button routerLink="/restaurant/detail">Explore More</button>
-            </div>
-        </div>
-
-        <div class="restaurant-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYTVpeVi7Btg-BXjEAQtg3Xuln11xmtr3p3HX9V2wiDfXu4-T2UEu6UbcZD0fJSG6biW4&usqp=CAU"
-                alt="Restaurant Image">
-            <div>
-                <h2>Another Restaurant</h2>
-                <p>A brief description of the restaurant goes here.</p>
-                <button routerLink="/restaurant/detail">Explore More</button>
+                <h2>{{ restaurant.name }}</h2>
+                <p>{{ restaurant.description }}</p>
+                <button [routerLink]="['/restaurant/detail', restaurant.id]">Explore More</button>
             </div>
         </div>
     </div>
 
-    <div class="pagination">
+    <!-- <div class="pagination">
         <button>Previous</button>
         <button>1</button>
         <button>2</button>
         <button>Next</button>
-    </div>
+    </div> -->
 </div>

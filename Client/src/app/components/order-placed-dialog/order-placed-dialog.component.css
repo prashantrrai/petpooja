@@ -10,9 +10,9 @@
   align-items: center;
   text-align: center;
   padding: 20px;
-  background: linear-gradient(to right, #061c34, #003366);
+  background: linear-gradient(to right, #2eafff, #314d69);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
+  /* border-radius: 8px; */
 }
 
 .confirmation-icon {

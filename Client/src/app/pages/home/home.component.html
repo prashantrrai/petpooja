@@ -1,11 +1,13 @@
 <div class="banner" [ngStyle]="{'background-image': 'url(' + bannerImage + ')'}">
     <div class="overlay"></div>
     <div class="banner-content">
-        <h1>{{ title }}</h1>
-        <div class="search-bar">
+        <h1 class="line-1">Discover</h1>
+        <h1 id="line-2">the Best</h1>
+        <h1 class="line-3">Restaurant</h1>
+        <!-- <div class="search-bar">
             <input type="text" placeholder="Search for restaurants..." [(ngModel)]="searchQuery">
             <button class="search-btn" (click)="search()">Search</button>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -21,7 +23,7 @@
                     <div class="info">
                         <p class="feedback">{{ restaurant.feedback }}</p>
                     </div>
-                    <button routerLink="/restaurant/detail">See More</button>
+                    <button [routerLink]="['/restaurant/detail', restaurant.id]">See More</button>
                 </div>
             </div>
         </div>
@@ -35,7 +37,17 @@
         <div class="testimonial" *ngFor="let testimonial of testimonials">
             <p>"{{ testimonial.text }}"</p>
             <p class="customer-name">- {{ testimonial.name }}</p>
-            <button routerLink="/restaurant/detail">Explore More</button>
         </div>
+    </div>
+</section>
+
+
+<section class="map">
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14709.548002242727!2d70.83049036980526!3d22.825167315369278!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39598d00373b8079%3A0xfcec49994cc4ddfd!2sMaharana%20pratap%20circle!5e0!3m2!1sen!2sin!4v1726081689933!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
 </section>
