@@ -1,9 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Restaurant } from '../../models/restaurant.model';
 import { RestaurantService } from '../../services/restaurant.service';
-// import { Restaurant } from '../../models/restaurant.js';
 
 @Component({
   selector: 'app-restaurant-detail',
@@ -13,10 +12,14 @@ import { RestaurantService } from '../../services/restaurant.service';
   styleUrl: './restaurant-detail.component.css'
 })
 export class RestaurantDetailComponent implements OnInit {
-  restaurantId: number | undefined;
+  restaurantId!: number;
   restaurant: Restaurant | undefined;
 
-  constructor(private route: ActivatedRoute, private restaurantService: RestaurantService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private restaurantService: RestaurantService
+  ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -29,6 +32,16 @@ export class RestaurantDetailComponent implements OnInit {
         console.error(`Restaurant with ID ${this.restaurantId} not found`);
       }
     }
-
   }
+
+  bookSeat(): void {
+    const restaurantId = this.restaurantId;
+
+    if (restaurantId) {
+      this.router.navigate(['/seat'], {
+        queryParams: { id: restaurantId }
+      });
+    }
+  }
+
 }

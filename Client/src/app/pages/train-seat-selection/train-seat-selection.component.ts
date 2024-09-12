@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { RestaurantService } from '../../services/restaurant.service';
 
 @Component({
   selector: 'app-train-seat-selection',
@@ -9,9 +10,11 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './train-seat-selection.component.html',
   styleUrl: './train-seat-selection.component.css'
 })
-export class TrainSeatSelectionComponent {
+export class TrainSeatSelectionComponent implements OnInit {
   isTrainMoving: boolean = true;
-  showModal: boolean = false;
+  // showModal: boolean = false;
+  restaurant: any;
+  selectedSeats: string[] = [];
 
   seatsA = [
     { label: 'A1', status: 'available' },
@@ -32,7 +35,49 @@ export class TrainSeatSelectionComponent {
   ];
 
 
-  constructor(private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private restaurantService: RestaurantService
+  ) { }
+
+  ngOnInit(): void {
+    const restaurantId = this.route.snapshot.queryParamMap.get('id');
+
+    if (restaurantId) {
+      this.restaurant = this.restaurantService.getRestaurantById(+restaurantId);
+    }
+  }
+
+  selectSeat(seat: any) {
+    if (this.isTrainMoving || seat.status === 'unavailable') return;
+    seat.status = seat.status === 'selected' ? 'available' : 'selected';
+
+    if (seat.status === 'selected') {
+      this.selectedSeats.push(seat.label);
+    } else {
+      this.selectedSeats = this.selectedSeats.filter(selectedSeat => selectedSeat !== seat.label);
+    }
+  }
+
+  onConfirm() {
+    if (this.selectedSeats.length === 0) {
+      alert('Please select at least one seat before proceeding.');
+      return;
+    }
+
+    this.router.navigate(['/booking'], {
+      queryParams: {
+        id: this.restaurant.id,
+        seats: this.selectedSeats.join(','),
+        orderId: this.generateOrderId()
+      }
+    });
+  }
+
+  generateOrderId(): string {
+    return 'ORD-' + Math.floor(Math.random() * 1000000);
+  }
 
   pauseTrain() {
     this.isTrainMoving = false;
@@ -42,38 +87,4 @@ export class TrainSeatSelectionComponent {
     this.isTrainMoving = true;
   }
 
-  selectSeat(seat: any) {
-    if (this.isTrainMoving || seat.status === 'unavailable') return;
-    seat.status = seat.status === 'selected' ? 'available' : 'selected';
-  }
-
-  // confirmSelection() {
-  //   this.showModal = true;
-  // }
-
-  // onConfirm(result: boolean) {
-  //   this.showModal = false;
-  //   if (result) {
-  //     console.log('Booking confirmed');
-  //   } else {
-  //     console.log('Booking cancelled');
-  //   }
-  // }
-
-  // onConfirm() {
-  //   console.log('Booking confirmed');
-  // }
-
-  onConfirm() {
-    const isSeatSelected = this.seatsA.concat(this.seatsB).some(seat => seat.status === 'selected');
-
-    if (!isSeatSelected) {
-      alert('Please select a seat before proceeding.');
-      return;
-    }
-
-    // Proceed to booking if a seat is selected
-    console.log('Booking confirmed');
-    this.router.navigate(['/booking']);
-  }
 }

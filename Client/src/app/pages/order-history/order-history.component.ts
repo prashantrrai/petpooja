@@ -54,9 +54,54 @@ export class OrderHistoryComponent {
       phoneNumber: '555-123-4567',
       status: 'Cancelled',
       image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYTVpeVi7Btg-BXjEAQtg3Xuln11xmtr3p3HX9V2wiDfXu4-T2UEu6UbcZD0fJSG6biW4&usqp=CAU'
+    },
+    {
+      id: 4,
+      restaurantId: 1,
+      restaurantName: 'Chaat House',
+      title: 'Order #12348',
+      description: 'North Indian Thali with butter naan, paneer masala, dal, and dessert.',
+      seatNumber: 'A1, A2, A3',
+      date: '2024-09-19',
+      timing: '7:00 PM',
+      numberOfPersons: 3,
+      customerName: 'Michael Brown',
+      phoneNumber: '222-333-4444',
+      status: 'Processing',
+      image: 'https://www.todaystraveller.net/wp-content/uploads/2021/05/IMG_0349-2-1024x768.jpeg'
+    },
+    {
+      id: 5,
+      restaurantId: 2,
+      restaurantName: 'Tandoor Treats',
+      title: 'Order #12349',
+      description: 'Traditional Gujarati thali with dhokla, kachori, and farsan.',
+      seatNumber: 'E3, E4',
+      date: '2024-08-26',
+      timing: '12:00 PM',
+      numberOfPersons: 2,
+      customerName: 'Emma Wilson',
+      phoneNumber: '888-999-0000',
+      status: 'Completed',
+      image: 'https://www.tandooritreats.com/img/curry_1740075785.jpg'
+    },
+    {
+      id: 6,
+      restaurantId: 3,
+      restaurantName: 'Royal Biryani',
+      title: 'Order #12350',
+      description: 'Large Margherita pizza with extra cheese and garlic bread.',
+      seatNumber: 'F2',
+      date: '2024-08-27',
+      timing: '6:30 PM',
+      numberOfPersons: 1,
+      customerName: 'Sophia Davis',
+      phoneNumber: '444-555-6666',
+      status: 'Completed',
+      image: 'https://miro.medium.com/v2/resize:fit:513/1*NmiahIDhJPTo_so6PwOCEA.png'
     }
-    // Add more orders as needed
   ];
+
 
   getStatusClass(status: string): string {
     switch (status) {

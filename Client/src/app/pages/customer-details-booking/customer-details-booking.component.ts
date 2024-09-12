@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../../components/confirmation-dialog/confirmation-dialog.component';
 import { OrderPlacedDialogComponent } from '../../components/order-placed-dialog/order-placed-dialog.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-details-booking',
@@ -13,11 +14,23 @@ import { OrderPlacedDialogComponent } from '../../components/order-placed-dialog
   styleUrl: './customer-details-booking.component.css'
 })
 export class CustomerDetailsBookingComponent implements OnInit {
+  restaurantId!: string | null;
+  seatsArray!: string | null;
+  orderId!: string | null;
   bookingForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, public dialog: MatDialog) { }
+  constructor(
+    private fb: FormBuilder,
+    public dialog: MatDialog,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.restaurantId = this.route.snapshot.queryParamMap.get('id');
+    this.seatsArray = this.route.snapshot.queryParamMap.get('seats');
+    this.orderId = this.route.snapshot.queryParamMap.get('orderId');
+
     this.bookingForm = this.fb.group({
       name: ['', Validators.required],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
@@ -26,14 +39,6 @@ export class CustomerDetailsBookingComponent implements OnInit {
       persons: ['', [Validators.required, Validators.min(1), Validators.max(10)]]
     });
   }
-
-  // onSubmit() {
-  //   if (this.bookingForm.valid) {
-  //     alert('Booking Submitted Successfully!');
-  //     console.log(this.bookingForm.value);
-  //   }
-  // }
-
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
@@ -48,12 +53,27 @@ export class CustomerDetailsBookingComponent implements OnInit {
         console.log('Cancelled');
       }
     });
-
   }
 
-  // openDialog(): void {
-  //   this.dialog.open(OrderConfirmationDialogComponent, {
-  //     width: '300px',
-  //   });
-  // }
+  submitBooking(): void {
+    if (this.bookingForm.valid) {
+      const bookingDetails = {
+        restaurantId: this.restaurantId,
+        seat: this.seatsArray,
+        orderId: this.orderId,
+        customer: this.bookingForm.value
+      };
+
+      console.log('Booking Details:', bookingDetails);
+
+      // Navigate to order history page with booking details
+      this.router.navigate(['/order/history'], {
+        state: { bookingDetails }
+      });
+
+      this.dialog.open(OrderPlacedDialogComponent);
+    } else {
+      alert('Please fill out the form correctly.');
+    }
+  }
 }
