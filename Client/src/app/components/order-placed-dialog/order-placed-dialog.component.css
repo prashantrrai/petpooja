@@ -1,7 +1,7 @@
 .confirmation-dialog-title {
   margin-bottom: 20px;
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 .confirmation-dialog-content {
@@ -10,7 +10,7 @@
   align-items: center;
   text-align: center;
   padding: 20px;
-  background: linear-gradient(to right, #2eafff, #314d69);
+  /* background: linear-gradient(to right, #2eafff, #314d69); */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   /* border-radius: 8px; */
 }

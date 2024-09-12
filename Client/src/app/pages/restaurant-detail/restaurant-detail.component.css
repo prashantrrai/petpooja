@@ -1,21 +1,13 @@
-/* Reset basic styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    padding: 20px;
-}
-
 .restaurant-view {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .container {
@@ -62,10 +54,11 @@ body {
 .detail-item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #fff;
+    background-color: #5ea1ae1c;
 }
 
 .detail-item h3 {

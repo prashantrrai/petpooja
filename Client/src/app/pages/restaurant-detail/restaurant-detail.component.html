@@ -1,13 +1,13 @@
 <section class="restaurant-view">
-    <div class="container" *ngIf="selectedRestaurant">
+    <div class="container" *ngIf="restaurant">
         <div class="restaurant-image">
-            <img [src]="selectedRestaurant.image" [alt]="selectedRestaurant.name">
+            <img [src]="restaurant.image" [alt]="restaurant.name">
         </div>
         <div class="restaurant-details">
-            <h1>{{ selectedRestaurant.name }}</h1>
-            <p class="description">{{ selectedRestaurant.description }}</p>
+            <h1>{{ restaurant.name }}</h1>
+            <p class="description">{{ restaurant.description }}</p>
             <div class="details">
-                <div class="detail-item" *ngFor="let detail of selectedRestaurant.details">
+                <div class="detail-item" *ngFor="let detail of restaurant.details">
                     <h3>{{ detail.label }}</h3>
                     <p>{{ detail.value }}</p>
                 </div>
